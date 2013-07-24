@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
 app.use(express.logger());
+app.set('views', __dirname + '/views')
 
 app.get('/', function(request, response) {
-  response.send('Hello World2!');
+  response.render('index');
 });
 
 var port = process.env.PORT || 5000;
